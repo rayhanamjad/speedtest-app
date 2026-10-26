@@ -35,4 +35,4 @@ Alternatively: Settings → Pages → Deploy from branch `main` / root.
 - `style.css` — styling
 - `app.js` — speed test logic (ping / download / upload)
 
-Made by Rayhan
+Made by Rayhan using Muse, under the order of Sir Nauman
