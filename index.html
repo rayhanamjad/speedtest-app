@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpeedTest — Internet Speed Test</title>
+<meta name="description" content="Test your internet speed: ping, jitter, download and upload in seconds. Free, no sign-up.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">⚡ Speed<span>Test</span></div>
+  <nav>
+    <a href="#history">History</a>
+    <a href="#about">About</a>
+    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>How fast is your internet?</h1>
+    <p>One click. Real ping, download & upload results in ~20 seconds.</p>
+
+    <div class="gauge-wrap">
+      <svg class="gauge" viewBox="0 0 200 120">
+        <path class="gauge-bg" d="M 20 110 A 90 90 0 0 1 180 110" fill="none" stroke-width="14" stroke-linecap="round"/>
+        <path id="gaugeArc" class="gauge-fill" d="M 20 110 A 90 90 0 0 1 180 110" fill="none" stroke-width="14" stroke-linecap="round"/>
+      </svg>
+      <div class="gauge-center">
+        <div id="bigSpeed">0.00</div>
+        <div class="unit">Mbps</div>
+        <div id="phaseLabel">Ready</div>
+      </div>
+    </div>
+
+    <button id="startBtn">▶ Start Test</button>
+    <div id="progress"><div id="progressBar"></div></div>
+
+    <div class="cards">
+      <div class="card"><div class="label">🏓 Ping</div><div class="value"><span id="pingVal">—</span><small> ms</small></div></div>
+      <div class="card"><div class="label">〰️ Jitter</div><div class="value"><span id="jitterVal">—</span><small> ms</small></div></div>
+      <div class="card"><div class="label">⬇️ Download</div><div class="value"><span id="downVal">—</span><small> Mbps</small></div></div>
+      <div class="card"><div class="label">⬆️ Upload</div><div class="value"><span id="upVal">—</span><small> Mbps</small></div></div>
+    </div>
+
+    <div id="verdict"></div>
+    <div class="actions">
+      <button id="shareBtn" class="ghost" hidden>📋 Copy Result</button>
+      <button id="againBtn" class="ghost" hidden>↻ Test Again</button>
+    </div>
+    <canvas id="chart" width="640" height="120"></canvas>
+    <p class="server">Server: Cloudflare global network • <span id="ipInfo">Detecting connection…</span></p>
+  </section>
+
+  <section id="history">
+    <h2>Your recent tests</h2>
+    <div id="historyList"><p class="empty">No tests yet — run your first test above.</p></div>
+    <button id="clearHistory" class="ghost" hidden>Clear history</button>
+  </section>
+
+  <section id="about">
+    <h2>What do these numbers mean?</h2>
+    <div class="grid">
+      <div><h3>Download</h3><p>How fast you receive data. 25+ Mbps is good for HD streaming, 100+ for 4K & gaming households.</p></div>
+      <div><h3>Upload</h3><p>How fast you send data — video calls, livestreams, cloud backups. 10+ Mbps is comfortable.</p></div>
+      <div><h3>Ping</h3><p>Reaction time of your connection. Under 20 ms is excellent for gaming, under 50 ms is fine for most use.</p></div>
+    </div>
+  </section>
+</main>
+<footer>Built by Rayhan • Powered by Cloudflare's speed network • <a href="https://speed.cloudflare.com" target="_blank" rel="noopener">speed.cloudflare.com</a></footer>
+<script src="app.js"></script>
+</body>
+</html>
